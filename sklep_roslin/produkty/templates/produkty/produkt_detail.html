@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ produkt.nazwa }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ produkt.nazwa }}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Strona Główna</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <h2>Opis produktu</h2>
+        <p>{{ produkt.opis }}</p>
+        <img src="{{ produkt.sadzonka_image.url }}" alt="{{ produkt.nazwa }} - Sadzonka">
+        <img src="{{ produkt.mlode_drzewo_image.url }}" alt="{{ produkt.nazwa }} - Młode drzewo">
+        <img src="{{ produkt.dorosle_drzewo_image.url }}" alt="{{ produkt.nazwa }} - Dorosłe drzewo">
+        <p>Cena: {{ produkt.cena }} PLN</p>
+        <button class="kup-teraz">Kup teraz</button>
+    </div>
+</body>
+</html>

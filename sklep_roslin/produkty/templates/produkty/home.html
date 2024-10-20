@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep z Roślinami</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="{{ season }}">
+    <header>
+        <h1>Witamy w naszym sklepie z roślinami</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Strona Główna</a></li>
+                <li><a href="{% url 'produkt_detail' 1 %}">Przykładowy Produkt 1</a></li>
+                <li><a href="{% url 'produkt_detail' 2 %}">Przykładowy Produkt 2</a></li>
+                <li><a href="{% url 'produkt_detail' 3 %}">Przykładowy Produkt 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form method="get">
+        <div>
+            <label for="min_cena">Min Cena:</label>
+            <input type="number" name="min_cena" step="0.01" placeholder="min">
+            <label for="max_cena">Max Cena:</label>
+            <input type="number" name="max_cena" step="0.01" placeholder="max">
+        </div>
+        <div>
+            <label>Tagi:</label>
+            {% for tag in tagi %}
+                <input type="checkbox" name="tagi" value="{{ tag.nazwa }}">{{ tag.nazwa }}
+            {% endfor %}
+        </div>
+        <button type="submit">Filtruj</button>
+    </form>
+
+    <ul class="produkty">
+        {% for produkt in produkty %}
+            <li>
+                <a href="{% url 'produkt_detail' produkt.pk %}">
+                    <img src="{{ produkt.sadzonka_image.url }}" alt="{{ produkt.nazwa }}">
+                    {{ produkt.nazwa }} - {{ produkt.cena }} PLN
+                </a>
+            </li>
+        {% empty %}
+            <li>Brak produktów spełniających kryteria.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

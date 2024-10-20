@@ -1,0 +1,138 @@
+/* Globalne style */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2c3e50;
+}
+
+/* Nagłówek */
+header {
+    background: #2ecc71;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Formularz filtrowania */
+form {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+form label {
+    margin-right: 10px;
+}
+
+form input[type="number"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #27ae60;
+}
+
+/* Lista produktów */
+ul.produkty {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+ul.produkty li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+ul.produkty li:hover {
+    transform: scale(1.05);
+}
+
+/* Zdjęcia */
+ul.produkty li img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Szczegóły produktu */
+.produkt-detail {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.produkt-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.dostawy {
+    margin-top: 20px;
+}
+
+.dostawy ul {
+    padding-left: 20px;
+}
+
+.dostawy li {
+    margin-bottom: 5px;
+}
+
+button.kup-teraz {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button.kup-teraz:hover {
+    background: #c0392b;
+}
